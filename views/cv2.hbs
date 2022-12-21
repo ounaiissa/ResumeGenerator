@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="CSS/creatcv2.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+      integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>CV2</title>
+  </head>
+  <body>
+    <div class="btn-group">
+      <button id="perso">Personal Infos</button>
+      <button id="prof">Professionnal Infos</button>
+    </div>
+
+   
+
+    <div  id="CV-form" class="CV-form">
+      
+      <form action="/createcv.html" method="POST">
+        <div  class="d-flex flex-row" >
+        <div style="display: none" class="perso">
+          <div class="form-group mt-2">
+            <label for="">Select your profile picture</label>
+            <input id="imgField" type="file" class="form-control">
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="FullName"> Full name</label>
+              <input
+                id="FullName"
+                name="FullName"
+                type="text"
+                class="form-control"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="col">
+              <label for="JobTitle"> job-title</label>
+              <input
+                id="JobTitle"
+                name="JobTitle"
+                type="text"
+                class="form-control"
+                placeholder="Enter your Job Title"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="phone">phone number</label>
+              <input
+                type=""
+                name="phone"
+                class="form-control"
+                id="phone"
+                placeholder="Enter Phone number"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+              placeholder="1234 Main St"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Twitter</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Twitter"
+              name="Twitter "
+              placeholder="@username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">LinkedIn</label>
+            <input
+              type="text"
+              class="form-control"
+              id="LinkedIn"
+              name="LinkedIn"
+              placeholder="@username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter you objective</label>
+            <textarea
+              class="form-control"
+              id="objective"
+              name="objective"
+              rows="3"
+            ></textarea>
+          </div>
+
+
+        </div>
+        <div  class="prof">
+         
+          <div class="form-group" id="ED">
+            <label for="exampleFormControlTextarea1">Enter your education</label>
+            <textarea
+              class="form-control EDfiled"
+              id="education"
+              name="education"
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtn">
+              <input type="button" value="Add" onclick="addNewEDfield()" class="btn btn-secondary"></input>
+            </div>
+          </div>
+          <div class="form-group" id="EXP">
+            <label for="exampleFormControlTextarea1">Enter your experience</label>
+            <textarea
+              class="form-control EXPfield"
+              id="experience "
+              name="experience"
+              rows="4"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtnEX">
+              <input type="button" value="Add" onclick="addNewEXfield()" class="btn btn-secondary">
+            
+            </input>
+            </div>
+          </div>
+          <div class="form-group" id="SKL">
+            <label for="exampleFormControlTextarea1">Enter your skills</label>
+            <textarea
+              class="form-control SKLfiled"
+              id="skills"
+              name="skills"
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtnSK">
+              <input type="button" value="Add" onclick="addNewSKfield()" class="btn btn-secondary">
+            
+            </input>
+            </div>
+          </div>
+        </div>
+       </div>
+       
+        <br />
+        <div class="col-sm-10">
+          <center>
+          <input class="btn btn-secondary text-center " type="button" id="Submit" value="Generate Resume" />
+        </center>
+        </div>
+      </form>
+    </div>
+
+    <div id="cvDisplay">
+      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+      <div class="resume">
+        <div class="resume_left">
+          <div class="resume_profile">
+            <img src="/img/pfp1.jpg" alt="profile_pic" />
+          </div>
+          <div class="resume_content">
+            <div class="resume_item resume_info">
+              <div class="title">
+                <p class="bold" id="inFullName">stephen colbert</p>
+                <p class="regular" id="inJobTitle">Designer</p>
+              </div>
+              <ul>
+                <li>
+                  <div class="icon">
+                    <i class="fas fa-map-signs"></i>
+                  </div>
+                  <div class="data" id="inAdress">
+                    21 Street, Texas <br />
+                    USA
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <div class="data" id="inPhone">+324 4445678</div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="data" id="inEmail">stephen@gmail.com</div>
+                </li>
+              </ul>
+            </div>
+            <div class="resume_item resume_skills">
+              <div class="title">
+                <p class="bold">skill's</p>
+              </div>
+              <ul>
+                <li>
+                  <div class="skill_name">HTML</div>
+                  <div class="skill_progress">
+                    <span style="width: 80%"></span>
+                  </div>
+                  <div class="skill_per">80%</div>
+                </li>
+                <li>
+                  <div class="skill_name">CSS</div>
+                  <div class="skill_progress">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <div class="skill_per">70%</div>
+                </li>
+                <li>
+                  <div class="skill_name">SASS</div>
+                  <div class="skill_progress">
+                    <span style="width: 90%"></span>
+                  </div>
+                  <div class="skill_per">90%</div>
+                </li>
+                <li>
+                  <div class="skill_name">JS</div>
+                  <div class="skill_progress">
+                    <span style="width: 60%"></span>
+                  </div>
+                  <div class="skill_per">60%</div>
+                </li>
+                <li>
+                  <div class="skill_name">JQUERY</div>
+                  <div class="skill_progress">
+                    <span style="width: 88%"></span>
+                  </div>
+                  <div class="skill_per">88%</div>
+                </li>
+              </ul>
+            </div>
+            <div class="resume_item resume_social">
+              <div class="title">
+                <p class="bold">Social</p>
+              </div>
+              <ul>
+                <li>
+                  <div class="icon">
+                    <i class="fab fa-facebook-square"></i>
+                  </div>
+                  <div class="data">
+                    <p class="semi-bold">Facebook</p>
+                    <p>Stephen@facebook</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <i class="fab fa-twitter-square"></i>
+                  </div>
+                  <div class="data">
+                    <p class="semi-bold">Twitter</p>
+                    <p>Stephen@twitter</p>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div class="data">
+                    <p class="semi-bold">Linkedin</p>
+                    <p>Stephen@linkedin</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="resume_right">
+          <div class="resume_item resume_about">
+            <div class="title">
+              <p class="bold">About us</p>
+            </div>
+            <p id="inOBJ">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Perspiciatis illo fugit officiis distinctio culpa officia totam
+              atque exercitationem inventore repudiandae?
+            </p>
+          </div>
+          <div class="resume_item resume_work">
+            <div class="title">
+              <p class="bold">Work Experience</p>
+            </div>
+            <ul>
+              <li>
+                <div id="inEXPdate" class="date">2013 - 2015</div>
+                <div class="info">
+                  <p id="inEXPtitle" class="semi-bold">
+                    Lorem ipsum dolor sit amet.
+                  </p>
+                  <p id="inEXPinfo">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum, voluptatibus!
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="date">2015 - 2017</div>
+                <div class="info">
+                  <p class="semi-bold">Lorem ipsum dolor sit amet.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum, voluptatibus!
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="date">2017 - Present</div>
+                <div class="info">
+                  <p class="semi-bold">Lorem ipsum dolor sit amet.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum, voluptatibus!
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="resume_item resume_education">
+            <div class="title">
+              <p class="bold">Education</p>
+            </div>
+            <ul>
+              <li>
+                <div class="date">2010 - 2013</div>
+                <div class="info">
+                  <p class="semi-bold">Web Designing (Texas University)</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum, voluptatibus!
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="date">2000 - 2010</div>
+                <div class="info">
+                  <p class="semi-bold">Texas International School</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum, voluptatibus!
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pbtn">
+      <button id="btn-print-this" class="btn btn-secondary btn-lg text-center">
+        Generate PDF
+      </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/index2.js"></script>
+    <script type="text/javascript" src="js/printThis.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  </body>
+</html>

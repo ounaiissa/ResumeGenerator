@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/all.min.css">
+
+    <link rel="stylesheet" href="CSS/createcv1.css" />
+    <link rel="stylesheet" href="CSS/home.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+         <i
+                              class="fas fa-cubes fa-2x me-3"
+                              style="color: rgba(10, 0, 10, 0.555)"
+                            ></i>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="menunav" class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <div class="pt-1 mb-4">
+                <a href="/login" style="width: 130px; color: #fff; border-radius: 60px; background-color: rgba(97, 59, 97, 0.74);"  class="hvr-icon-buzz-out btn ">
+                  Login <i style="margin-left: 4%; color:rgba(97, 59, 97, 0.74); font-size: 20px;" class="fa fa-lock hvr-icon"></i>
+                </a>
+              </div>
+              
+              <li class="nav-item">
+              <div class="pt-1 mb-4">
+                <a href="/register" style="width: 130px; color: #fff; border-radius: 60px; background-color: rgba(97, 59, 97, 0.74);"  class="hvr-icon-buzz-out btn ">
+                  Register <i style="margin-left: 4%; color:rgba(97, 59, 97, 0.74); font-size: 20px;" class="fa fa-lock hvr-icon"></i>
+                </a>
+              </div>
+              
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+    <!-- <h1>create cv</h1> -->
+    <h3>Create your resume</h3>
+    {{!-- <div class="btn-group" >
+      <button class="btn btn-secondary btn-lg text-center " id="perso">Personal Infos</button>
+      <button class="btn btn-secondary btn-lg text-center " id="prof">Professionnal Infos</button>
+    </div> --}}
+    <div id="CV-form" class="CV-form">
+      
+      <form action="/createcv.html" method="POST">
+       <div class="d-flex flex-row" >
+        <div  class="perso">
+          <div class="form-group mt-2">
+            <label for="">Select your profile picture</label>
+            <input id="imgField" type="file" class="form-control">
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="FullName"> Full name</label>
+              <input
+                id="FullName"
+                name="FullName"
+                type="text"
+                class="form-control"
+                placeholder="Full name"
+              />
+            </div>
+            <div class="col">
+              <label for="JobTitle"> job-title</label>
+              <input
+                id="JobTitle"
+                name="JobTitle"
+                type="text"
+                class="form-control"
+                placeholder="Enter your Job Title"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="phone">phone number</label>
+              <input
+                type=""
+                name="phone"
+                class="form-control"
+                id="phone"
+                placeholder="Enter Phone number"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+              placeholder="1234 Main St"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter you objective</label>
+            <textarea
+              class="form-control"
+              id="objective"
+              name="objective"
+              rows="3"
+            ></textarea>
+          </div>
+
+
+        </div>
+        <div class="prof">
+         
+          <div class="form-group" id="ED">
+            <label for="exampleFormControlTextarea1">Enter your education</label>
+            <textarea
+              class="form-control EDfiled"
+              id="education"
+              name="education"
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtn">
+              <input type="button" value="Add" onclick="addNewEDfield()" class="btn btn-secondary">
+            
+            </input>
+            </div>
+          </div>
+          <div class="form-group" id="EXP">
+            <label for="exampleFormControlTextarea1">Enter your experience</label>
+            <textarea
+              class="form-control EXPfield"
+              id="experience "
+              name="experience"
+              rows="4"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtnEX">
+              <input type="button" value="Add" onclick="addNewEXfield()" class="btn btn-secondary">
+            
+            </input>
+            </div>
+          </div>
+          <div class="form-group" id="SKL">
+            <label for="exampleFormControlTextarea1">Enter your skills</label>
+            <textarea
+              class="form-control SKLfiled"
+              id="skills"
+              name="skills"
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-2" id="AddBtnSK">
+              <input type="button" value="Add" onclick="addNewSKfield()" class="btn btn-secondary">
+            
+            </input>
+            </div>
+          </div>
+        </div>
+       </div>
+       
+        <br />
+        <div class="col-sm-10">
+          <center>
+          <input class="btn btn-secondary text-center " type="button" id="submit" value="Generate Resume" />
+        </center>
+        </div>
+      </form>
+    </div>
+
+    <div class="display">
+      <!-- <p class="output" id="output1"></p> -->
+      <div id="cv-display">
+        <div class="photo-and-name">
+          <img id="imgTemplate" src="img/pfp1.jpg" class="photo" alt="Profile Picture" />
+          <div class="contact-info-box">
+            <h1 class="name" id="outFullName">Full Name</h1>
+            <br />
+            <h3 class="job-title" id="outJobTitle">Job Title</h3>
+            <div class="contact-details">
+              <p id="outPhone">Phone: +92-344-4XX3-1XX</p>
+  
+              <p id="outEmail">&nbsp; - &nbsp;Email: contact@muhammadovi.com</p>
+            </div>
+          </div>
+        </div>
+        <div id="outObj">
+          <h3>Objective</h3>
+          <p>
+            To take a challenging and managerial role in the field of Computer
+            programming and implement the expertise and experience gained in this
+            field to develop complex project with efficiency and quality.
+          </p>
+        </div>
+        <div class="ED-template"
+        id="educationCV">
+          <h3>Education</h3>
+          <ul id="ED-list">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos!</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+          </ul>
+          
+        </div>
+        <div id="outEXP">
+          <h3>Experience</h3>
+          <ul id="EXPList">
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+          </ul>
+        </div>
+        <div id="outSkills">
+          <h3>Skills</h3>
+          <ul id="SKList">
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="editor"></div> -->
+    <div id="Pbtn">
+      <!-- <input type="button" value="Print" id="printCV"> -->
+      <!-- <button onclick="print()">Print</button> -->
+      <button id="btn-print-this" class="btn btn-secondary btn-lg text-center ">Generate PDF</button>
+    </div>
+   
+    <!-- <div class="SavePDF">
+      <input class="btn btn-secondary text-center " type="button" id="Dbtn" value="Generate PDF" />
+    </div> -->
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/Index1.js"></script>
+    <script type="text/javascript" src="js/printThis.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  </body>
+</html>

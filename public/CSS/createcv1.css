@@ -1,0 +1,161 @@
+body{
+    font-family: 'Montserrat', sans-serif; 
+    background: radial-gradient( #92bee2, #343864);
+    /* background-color:  rgba(10, 0, 10, 0.24); */
+    
+}
+
+
+
+#nav{
+    position: fixed;
+  top: 0;
+  width: 100%;
+}
+#nav{
+    position: fixed;
+  top: 0;
+  width: 100%;
+}
+#nav a{
+padding-left: 5%;
+
+}
+
+#menunav{
+    padding:4px  7%;
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    justify-content: right;
+    margin-right: 90px;
+}
+
+#menunav li{
+    margin: 0 2%;
+}
+
+.CV-form{
+    padding: 2%;
+    margin: 160px auto;
+    border: solid 2px rgba(0, 0, 0, 0.308);
+    width: 1200px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CV-form .form-group{
+    margin: 4%;
+
+}
+
+.CV-form .personal{
+    width: 600px;
+    margin: 4% ;
+}
+
+.CV-form .prof{
+    width: 600px;
+    margin: 4% ;
+}
+
+
+#Pbtn{
+    display: none;
+}
+
+
+
+
+
+
+
+
+.display p {
+    color: white;
+}
+
+#cv-display {
+    min-height: 200px;
+    width: 60%;
+    min-width: 600px;
+    background: whitesmoke;
+    margin: 160px auto;
+    padding: 30px;
+    color: #27aae1;
+    display: none;
+}
+
+
+
+.photo {
+    width: 15%;
+    min-width: 130px;
+    float: left;
+    margin-right: 20px;
+}
+
+.contact-info-box {
+    width: 70.9%;
+    display: inline-block;
+}
+
+.name {
+    margin-bottom: -5px;
+}
+.job-title {
+    display: inline-block;
+}
+
+.contact-details {
+    background: #27aae1;
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+#outObj h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#outObj p {
+    padding: 0 5px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #000;
+}
+
+#educationCV h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+
+#outEXP h3{
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#outSkills h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
