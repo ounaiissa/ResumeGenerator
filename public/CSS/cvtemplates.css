@@ -1,6 +1,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
-    background: radial-gradient( #e1bdeb, #080808);
+    background-color: #5e5e5e31;
+    /* background: radial-gradient( #e1bdeb, #080808); */
     background-size: cover;
     background-repeat: no-repeat;
     height: full;
@@ -82,8 +83,8 @@ height: 30px;
   }
 
   .btn-group button {
-    background-color: rgba(97, 59, 97, 0.74); 
-    border-left: 1px solid rgb(78, 52, 78); 
+    background-color: #3c5e80; 
+    border-left: 1px solid #3c5e80; 
     border-top: none;
     color: white; 
     padding: 10px 24px; 
@@ -101,7 +102,7 @@ height: 30px;
   }
   
   .btn-group button:hover {
-    background-color: rgba(59, 42, 59, 0.74);
+    background-color: #243749;
   }
 
 

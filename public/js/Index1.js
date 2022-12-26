@@ -1,4 +1,4 @@
-// const { default: jsPDF } = require("jspdf");
+
 
 const fullname = document.getElementById("FullName");
 const JobTitle = document.getElementById("JobTitle");
@@ -18,6 +18,9 @@ const outObj = document.getElementById('outObj');
 // const outED2 = document.getElementsByClassName('ED-list');
 
 // document.getElementById('printCV').style.display = 'none';
+
+
+
 
 function GenerateCV() {
   outName.innerHTML = fullname.value;

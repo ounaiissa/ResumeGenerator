@@ -1,15 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mysql = require('mysql');
-const bodyParser =require('body-parser');
+// const bodyParser =require('body-parser');
 
 const app = express();
 
 
 app.set('view engine', 'hbs');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static('public'));
 
 

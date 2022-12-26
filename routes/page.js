@@ -24,6 +24,9 @@ router.get('/cv1', (req, res) =>{
 router.get('/cv2', (req, res) =>{
     res.render('cv2');
 });
+router.get('/cv3', (req, res) =>{
+    res.render('cv3');
+});
 
 
 module.exports = router;

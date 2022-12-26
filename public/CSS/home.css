@@ -6,6 +6,8 @@ body{
     position: fixed;
   top: 0;
   width: 100%;
+  background-color: #2B547E;
+  box-shadow: 2px 2px 3px 2px;
 }
 #nav a{
 padding-left: 5%;
@@ -13,6 +15,7 @@ padding-left: 5%;
 }
 
 #menunav{
+  
     padding:4px  7%;
     font-size: 20px;
     font-weight: 900;
@@ -30,7 +33,7 @@ padding-left: 5%;
     display: flex;
     justify-content: center;
     padding-top: 7%;
-    background-color: rgba(10, 0, 10, 0.637);
+    background-color:#2B547E;
     height: 700px;
 }
 .landing .imageL img{
@@ -59,7 +62,7 @@ padding-left: 5%;
    position: absolute;
    top: 90px;
    left: 400px;
-   background-color: rgba(10, 0, 10, 0.555);
+   background-color: #1b2a3a98;
 }
 
 .cancel{
@@ -87,7 +90,7 @@ padding-left: 5%;
 
 .landing  i{
    font-size: 24px;
-    color:  rgba(10, 0, 10, 0.555);
+    color:  #fff;
 }
 
 
@@ -280,7 +283,7 @@ footer{
 }
 
 .fbg {
-    background-color: rgba(49, 10, 49, 0.74);
+    /* background-color: rgba(49, 10, 49, 0.74); */
     height: 400px;
 }
 
